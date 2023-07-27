@@ -21,6 +21,9 @@ let messages = JSON.parse(fs.readFileSync(filePath));
 
 
 // Route to handle GET request for fetching all data
+app.get("/",(req,res)=>{
+  res.send({"message":"Welcome to BARD."})
+})
 app.get('/api/data', (req, res) => {
   messages.push({ content: req.query == null ? "Hello" : req.query.ques });
   client.generateMessage({
