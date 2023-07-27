@@ -25,7 +25,7 @@ let messages = JSON.parse(fs.readFileSync(filePath));
 //   res.send({"message":"Welcome to BARD."})
 // })
 app.get('/', (req, res) => {
-  messages.push({ content: req.query == null ? "Hello" : req.query.ques });
+  messages.push({ content: "Hello" });
   client.generateMessage({
     // required, which model to use to generate the result
     model: MODEL_NAME,
